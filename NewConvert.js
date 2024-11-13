@@ -3,6 +3,7 @@ const readline = require('readline');
 const { OpenAI } = require('openai');
 require('dotenv').config();
 
+
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
@@ -14,7 +15,6 @@ const rl = readline.createInterface({
 
 readArticle = (filePath) => {
   try {
-    //console.log(fs.readFileSync(filePath, 'utf-8'))
     return fs.readFileSync(filePath, 'utf-8');
   } catch (error) {
     console.error("Nie udało się wczytać pliku. Sprawdź ścieżkę i spróbuj ponownie.");
@@ -40,7 +40,7 @@ generateHTMLForArticle = async (articleContent, output) => {
         { role: "system", content: "You are a helpful assistant." },
         { role: "user", content: prompt },  // Twoje zapytanie
       ],
-      max_tokens: 1000,
+      max_tokens: 3000,
       temperature: 0.4,
     });
     await saveToHtmlFile(completion.choices[0].message.content, output);
@@ -99,11 +99,10 @@ async function main() {
       // Generowanie HTML z treści artykułu
       await generateHTMLForArticle(fileContent, outputPath);
     }
-    rl.close(); // Zamykanie interfejsu readline po zakończeniu
+    rl.close(); 
   } catch (error) {
     console.error('Wystąpił błąd:', error);
   }
 }
 
-// Uruchomienie programu
 main();
