@@ -1,0 +1,8 @@
+# Ignorowanie pliku konfiguracyjnego z kluczami
+.env
+
+# Ignorowanie folderu z zależnościami
+node_modules/
+
+# Ignorowanie pliku z wersjami zależności
+package-lock.json
