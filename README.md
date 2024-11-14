@@ -67,7 +67,7 @@ Aby uruchomić aplikację, potrzebujesz:
 3. **Zapisanie wygenerowanego HTML:**
     Po otrzymaniu odpowiedzi z OpenAI, kod HTML zostaje zapisany w pliku `OxidoZadanieRekrutacyjne/html/artykul.html`.
 ## Szablon i podgląd
-W ramach wykonanego zadania został stworzony szablon, któy jest gotowy do wklejenia zawartości wygenerowanego dokumentu do `body`. Istnieje również plik `podglad.html`, który zawiera style i zawartość wygenerowaną przez AI.
+W ramach wykonanego zadania został stworzony szablon `szablon.html`, który jest gotowy do wklejenia zawartości wygenerowanego dokumentu do `body`. Istnieje również plik `podglad.html`, który zawiera style i zawartość wygenerowaną przez AI.
 Ścieżka to: `OxidoZadanieRekrutacyjne/html/`.
 
 # Struktura projektu
