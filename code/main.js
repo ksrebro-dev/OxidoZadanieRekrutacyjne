@@ -1,27 +1,40 @@
 const { closerl, askForFilePath, readArticle } = require('./FileUtils/FileUtils');
-const { generateHTMLForArticle} = require('./OpenAIUtils/OpenAIUtils');
+const { generateHTMLForArticle } = require('./OpenAIUtils/OpenAIUtils');
 const path = require('path');
 
+/**
+ * Główna funkcja programu, która zarządza procesem:
+ * - pobierania ścieżki do pliku z artykułem od użytkownika,
+ * - wczytywania treści pliku,
+ * - generowania kodu HTML na podstawie artykułu,
+ * - zapisywania wygenerowanego HTML do pliku.
+ * 
+ * @async
+ * @function
+ * @returns {Promise<void>} - Zwraca Promise, który rozwiązuje się po zakończeniu całego procesu.
+ * 
+ * @description
+ * Funkcja main() działa jako główny punkt wejścia do programu. Wykorzystuje pętlę do uzyskania poprawnej
+ * ścieżki pliku od użytkownika, a następnie wczytuje treść artykułu, generuje na jej podstawie kod HTML 
+ * przy użyciu API OpenAI i zapisuje wynikowy plik HTML. W przypadku błędów wyświetla stosowny komunikat.
+ */
 async function main() {
   try {
     let filePath;
-    // Pętla, która pyta użytkownika o poprawną ścieżkę do pliku, dopóki nie poda poprawnej
+
     while (true) {
-      filePath = await askForFilePath();
+      filePath = await askForFilePath(); 
       if (filePath) {
-        break;
+        break; 
       }
     }
 
-    // Wczytanie treści pliku
     const fileContent = readArticle(filePath);
     if (fileContent) {
-      console.log("File content", fileContent);
-      // Ścieżka wyjściowa dla pliku HTML
       const outputPath = path.resolve(__dirname, '../html/artykul.html');
-      // Generowanie HTML z treści artykułu
-      await generateHTMLForArticle(outputPath, fileContent );
+      await generateHTMLForArticle(fileContent, outputPath);
     }
+
     closerl();
   } catch (error) {
     console.error('Wystąpił błąd:', error);
