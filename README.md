@@ -1,8 +1,6 @@
-# OxidoZadanieRekrutacyjne
-Projekt pozwala na połączenie się z OpenAI i przekonwertowanie teksu z pliku w odpowiedni sposób.
 # Projekt: Konwersja artykułu na HTML przy użyciu OpenAI
 
-Witaj! Ten projekt ma na celu stworzenie aplikacji w JavaScript, która wykorzystuje OpenAI API do konwersji tekstowego artykułu na sformatowany kod HTML. Aplikacja umożliwia:
+Projekt ma na celu stworzenie aplikacji w JavaScript, która wykorzystuje OpenAI API do konwersji tekstowego artykułu na sformatowany kod HTML. Aplikacja umożliwia:
 
 1. Łączenie się z API OpenAI.
 2. Wczytanie artykułu z pliku tekstowego.
@@ -44,12 +42,12 @@ Aby uruchomić aplikację, potrzebujesz:
 
 4. **Uruchom aplikację:**
 
-    Aby uruchomić aplikację, użyj poniższego polecenia:
+    Aby uruchomić aplikację, użyj poniższego polecenia w katalogu `OxidoZadanieRekrutacyjne/`:
 
     ```bash
     npm start
     ```
-    Wpisanie numeru `1` spowoduje zaakceptowanie domyślego pliku z tekstem, bądź można samodzielnie wprowadzić własną ścieżkę do pliku.
+    Wpisanie numeru `1` spowoduje zaakceptowanie domyślego pliku z tekstem, bądź można samodzielnie wprowadzić własną ścieżkę do pliku `*.txt`.
 
 
    Plik z artykułem zostanie zapisany w folderze `OxidoZadanieRekrutacyjne/html/artykul.html`.
@@ -66,9 +64,14 @@ Aby uruchomić aplikację, potrzebujesz:
 
 3. **Zapisanie wygenerowanego HTML:**
     Po otrzymaniu odpowiedzi z OpenAI, kod HTML zostaje zapisany w pliku `OxidoZadanieRekrutacyjne/html/artykul.html`.
-## Szablon i podgląd
-W ramach wykonanego zadania został stworzony szablon `szablon.html`, który jest gotowy do wklejenia zawartości wygenerowanego dokumentu do `body`. Istnieje również plik `podglad.html`, który zawiera style i zawartość wygenerowaną przez AI.
-Ścieżka to: `OxidoZadanieRekrutacyjne/html/`.
+   
+## Szablon i Podgląd
+W folderze `OxidoZadanieRekrutacyjne/html/` znajdują się:
+- **`szablon.html`** — Prosty szablon do wklejenia wygenerowanej treści.
+- **`podglad.html`** — Zawiera style CSS i przykładową treść, którą można wykorzystać jako podgląd.
+- **`artykul.html`** - Zawiera wygenerowany plik z OpenAI
+
+
 
 # Struktura projektu
 
