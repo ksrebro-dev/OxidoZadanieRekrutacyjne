@@ -1,8 +1,6 @@
-# OxidoZadanieRekrutacyjne
-Projekt pozwala na połączenie się z OpenAI i przekonwertowanie teksu z pliku w odpowiedni sposób.
 # Projekt: Konwersja artykułu na HTML przy użyciu OpenAI
 
-Witaj! Ten projekt ma na celu stworzenie aplikacji w JavaScript, która wykorzystuje OpenAI API do konwersji tekstowego artykułu na sformatowany kod HTML. Aplikacja umożliwia:
+Projekt ma na celu stworzenie aplikacji w JavaScript, która wykorzystuje OpenAI API do konwersji tekstowego artykułu na sformatowany kod HTML. Aplikacja umożliwia:
 
 1. Łączenie się z API OpenAI.
 2. Wczytanie artykułu z pliku tekstowego.
@@ -21,8 +19,8 @@ Aby uruchomić aplikację, potrzebujesz:
 1. **Sklonuj repozytorium na swój komputer:**
 
     ```bash
-    git clone <adres_repozytorium>
-    cd <nazwa_folderu>
+    git clone https://github.com/ksrebro-dev/OxidoZadanieRekrutacyjne.git
+    cd OxidoZadanieRekrutacyjne
     ```
 
 2. **Zainstaluj zależności:**
@@ -35,23 +33,24 @@ Aby uruchomić aplikację, potrzebujesz:
 
 3. **Skonfiguruj plik `.env`:**
 
-    W katalogu głównym projektu stwórz plik `.env` i umieść w nim swój klucz API OpenAI:
+    W katalogu głównym projektu (`OxidoZadanieRekrutacyjne`) stwórz plik `.env` i umieść w nim swój klucz API OpenAI:
 
     ```
     OPENAI_API_KEY=twój_klucz_api
     ```
 
-    Jeśli nie masz jeszcze klucza, możesz go uzyskać, rejestrując się na [platformie OpenAI](https://platform.openai.com/).
 
 4. **Uruchom aplikację:**
 
-    Aby uruchomić aplikację, użyj poniższego polecenia:
+    Aby uruchomić aplikację, użyj poniższego polecenia w katalogu `OxidoZadanieRekrutacyjne/`:
 
     ```bash
     npm start
     ```
+    Wpisanie numeru `1` spowoduje zaakceptowanie domyślego pliku z tekstem, bądź można samodzielnie wprowadzić własną ścieżkę do pliku `*.txt`.
 
-    Aplikacja poprosi Cię o podanie ścieżki do pliku z artykułem lub zaakceptowanie domyślnej ścieżki (`./tresc_artykulu.txt`).
+
+   Plik z artykułem zostanie zapisany w folderze `OxidoZadanieRekrutacyjne/html/artykul.html`.
 
 ## Jak działa aplikacja?
 
@@ -59,24 +58,48 @@ Aby uruchomić aplikację, potrzebujesz:
     Aplikacja pozwala na wczytanie pliku tekstowego, który zawiera artykuł, który chcemy przekształcić na HTML. Można to zrobić, podając ścieżkę do pliku lub korzystając z domyślnego pliku.
 
 2. **Wysyłanie zapytania do OpenAI:**
-    Po wczytaniu artykułu aplikacja przekazuje jego treść do OpenAI z odpowiednim zapytaniem. Celem jest wygenerowanie kodu HTML, który zawiera:
+    Po wczytaniu artykułu aplikacja przekazuje jego treść do OpenAI z odpowiednim promptem. Celem jest wygenerowanie kodu HTML, który zawiera:
     - Strukturalne tagi HTML, takie jak nagłówki, akapity, listy.
     - Tag `<img>` w miejscach, gdzie można by umieścić obrazy. Wartości atrybutu `alt` tagów `<img>` będą zawierały dokładny opis, który może posłużyć do wygenerowania grafik.
 
 3. **Zapisanie wygenerowanego HTML:**
-    Po otrzymaniu odpowiedzi z OpenAI, kod HTML zostaje zapisany w pliku `artykul.html`.
+    Po otrzymaniu odpowiedzi z OpenAI, kod HTML zostaje zapisany w pliku `OxidoZadanieRekrutacyjne/html/artykul.html`.
+   
+## Szablon i Podgląd
+W folderze `OxidoZadanieRekrutacyjne/html/` znajdują się:
+- **`szablon.html`** — Prosty szablon do wklejenia wygenerowanej treści.
+- **`podglad.html`** — Zawiera style CSS i przykładową treść, którą można wykorzystać jako podgląd.
+- **`artykul.html`** - Zawiera wygenerowany plik z OpenAI
 
-## Przykład działania
 
-1. Program zapyta o ścieżkę do pliku z artykułem.
-2. Po wczytaniu pliku artykuł zostaje przekształcony na HTML i zapisany w pliku `artykul.html`.
-3. Jeśli w artykule występują miejsca, w których OpenAI uznaje, że obrazki są pomocne, zostaną dodane tagi `<img src="image_placeholder.jpg" alt="[dokładny opis grafiki dla AI]" />` wraz z podpisami w tagu `<figcaption>`.
 
-## Struktura projektu
+# Struktura projektu
 
-- `index.js` – główny plik aplikacji, odpowiedzialny za wczytywanie pliku, komunikację z API OpenAI oraz zapis do pliku HTML.
-- `.env` – plik z kluczem API OpenAI.
-- `tresc_artykulu.txt` – przykładowy plik z artykułem do konwersji.
-- `artykul.html` – wynikowy plik HTML wygenerowany przez aplikację.
-  
+OxidoZadanieRekrutacyjne
+├── code  
+│   ├── ObslugaOpenAI  
+│   │   └── ObslugaOpenAI.js  
+│   ├── ObslugaPlikow  
+│   │   └── ObslugaPlikow.js  
+│   └── main.js  
+├── html  
+│   ├── artykul.html  
+│   ├── podglad.html  
+│   └── szablon.html  
+├── .env  
+├── package.json  
+├── README.md  
+└── tresc_artykulu.txt  
+
+### Wyjaśnienie:
+- `OxidoZadanieRekrutacyjne` - Główny folder projektu.
+- `code` - Zawiera kod źródłowy, podzielony na moduły:
+  - `ObslugaOpenAI` - Moduł obsługi OpenAI.
+  - `ObslugaPlikow` - Moduł obsługi plików.
+  - `main.js` - Główny plik programu.
+- `html` - Folder z szablonami i wygenerowanymi plikami HTML.
+- `.env` - Plik konfiguracyjny z kluczami API. (należy go dodać samodzielnie i dodać klucz API - opisane powyżej)
+- `package.json` - Pliki zarządzające zależnościami projektu.
+- `README.md` - Dokumentacja projektu.
+- `tresc_artykulu.txt` - Plik z treścią artykułu.
 
