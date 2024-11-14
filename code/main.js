@@ -1,5 +1,5 @@
-const { closerl, askForFilePath, readArticle } = require('./FileUtils/FileUtils');
-const { generateHTMLForArticle } = require('./OpenAIUtils/OpenAIUtils');
+const { closerl, askForFilePath, readArticle } = require('./ObslugaPlikow/ObslugaPlikow');
+const { generateHTMLForArticle } = require('./ObslugaOpenAI/ObslugaOpenAI');
 const path = require('path');
 
 /**

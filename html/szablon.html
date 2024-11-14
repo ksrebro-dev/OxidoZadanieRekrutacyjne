@@ -4,36 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Podgląd Artykułu</title>
-    <!-- Ładowanie prostych stylów dla czytelności -->
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+        * {
             margin: 0;
-            padding: 20px;
-            max-width: 800px;
-            margin: auto;
+            padding: 0;
+            box-sizing: border-box;
         }
-        h1, h2, h3, h4, h5, h6 {
+
+        body {
+            font-family: 'Roboto', sans-serif;
             color: #333;
+            line-height: 1.8;
+            padding: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgb(255,255,255);
+            background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(162,246,207,1) 100%);
+
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            
+            font-weight: 600;
             margin-top: 1.5em;
         }
-        p {
-            margin-bottom: 1em;
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
         }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 0.75em;
+        }
+
+        p {
+            font-size: 1.1em;
+            margin-bottom: 1.5em;
+            line-height: 1.6;
+        }
+
         img {
             display: block;
             margin: 20px auto;
             max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
         }
+
         figcaption {
             text-align: center;
-            font-size: 0.9em;
-            color: #555;
+            font-size: 0.95em;
+            margin-top: 10px;
+        }
+
+        a {
+          
+            text-decoration: none;
+            border-bottom: 2px solid #fff;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #1a242f;
+            border-bottom-color: #1a242f;
+        }
+        figcaption {
+            margin-bottom: 30px;
+        }
+
+        /* Dodanie responsywności */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.6em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+            figcaption {
+            margin-bottom: 20px;
+             }
         }
     </style>
 </head>
 <body>
-    <!-- Pusta sekcja <body>, gotowa na wklejenie treści artykułu -->
+<!-- Tu wklej zawartość pliku artykul.html -->
 </body>
 </html>

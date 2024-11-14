@@ -2,7 +2,7 @@ const { OpenAI } = require('openai');
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../../.env') });
 
-const { saveToHtmlFile } = require('../FileUtils/FileUtils');
+const { saveToHtmlFile } = require('../ObslugaPlikow/ObslugaPlikow');
 
 // Inicjalizacja klienta OpenAI z kluczem API pobranym ze zmiennych środowiskowych
 const openai = new OpenAI({
@@ -35,6 +35,7 @@ const generateHTMLForArticle = async (articleContent, output) => {
     ${articleContent}`;
 
     try {
+        console.log("Cierpliwości, odpowiedź jest generowana...")
         const completion = await openai.chat.completions.create({
             model: "gpt-4",
             messages: [
