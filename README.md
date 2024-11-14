@@ -70,7 +70,7 @@ Aby uruchomić aplikację, potrzebujesz:
 
 # Struktura projektu
 
-  
+OxidoZadanieRekrutacyjne
 ├── code  
 │   ├── ObslugaOpenAI  
 │   │   └── ObslugaOpenAI.js  
